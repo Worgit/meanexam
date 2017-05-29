@@ -1,0 +1,5 @@
+<form (submit) = "login(formData)" #formData = "ngForm">
+  <label>Name: <input type = "text" name = "name" ngModel></label>
+  <input type = "submit" value = "Login">
+</form>
+<p *ngFor = "let error of errors">{{error}}</p>

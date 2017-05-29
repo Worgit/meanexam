@@ -1,0 +1,11 @@
+<a [routerLink]="['../dashboard']">Home</a>
+<a href = "/logout">Logout</a>
+<h1>New Question</h1>
+<p *ngIf = "errors">{{errors}}</p>
+<form (submit) = "addQuestion(formData)" #formData = "ngForm">
+  <label>Question: <textarea name = "question" ngModel></textarea></label>
+  <label>Correct Answer: <input type="text" name="answer" ngModel></label>
+  <label>Fake Answer 1: <input type="text" name="fakeanswerone" ngModel></label>
+  <label>Fake Answer 2: <input type="text" name="fakeanswertwo" ngModel></label>
+  <input type = "submit" value = "Add Question">
+</form>

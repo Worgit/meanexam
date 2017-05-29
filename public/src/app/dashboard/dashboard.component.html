@@ -1,0 +1,18 @@
+<a [routerLink]="['../question']">Add a Question</a>
+<a href = "/logout">Logout</a>
+<button (click)= "start()">Play</button>
+<p>Click the button above to start the trivia game.</p>
+<p *ngIf = "errors">{{errors}}</p>
+<h2 *ngIf = "success">Good Job, {{user.name}}!  Your Score was {{success.correct}}/{{success._questions.length}}({{(success.correct / success._questions.length) * 100}}%)</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Score</th>
+    <th>Percentage</th>
+  </tr>
+  <tr *ngFor = "let quiz of quizzes">
+    <td>{{quiz._user.name}}</td>
+    <td>{{quiz.correct}}/{{quiz._questions.length}}</td>
+    <td>{{(quiz.correct / quiz._questions.length) * 100}}%</td>
+  </tr>
+</table>

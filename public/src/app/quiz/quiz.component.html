@@ -1,0 +1,19 @@
+<p *ngIf = "user">Hi {{user.name}}!</p>
+<p>Choose an answer for each of the questions and submit the test once done</p>
+<p>Good Luck!</p>
+<form (submit) = "answer(formData, $event)" #formData = "ngForm">
+  <p>1: {{questions[0].question}}</p>
+  <label><input type="radio" name="answerOne" [value] = "questions[0].answer" ngModel> {{questions[0].answer}}</label>
+  <label><input type="radio" name="answerOne" [value] = "questions[0].fakeansweroneanswer" ngModel> {{questions[0].fakeanswerone}}</label>
+  <label><input type="radio" name="answerOne" [value] = "questions[0].fakeanswertwoanswer" ngModel> {{questions[0].fakeanswertwo}}</label>
+  <p>2: {{questions[1].question}}</p>
+  <label><input type="radio" name="answerTwo" [value] = "questions[1].answer" ngModel> {{questions[1].answer}}</label>
+  <label><input type="radio" name="answerTwo" [value] = "questions[1].fakeansweroneanswer" ngModel> {{questions[1].fakeanswerone}}</label>
+  <label><input type="radio" name="answerTwo" [value] = "questions[1].fakeanswertwoanswer" ngModel> {{questions[1].fakeanswertwo}}</label>
+  <p>3: {{questions[2].question}}</p>
+  <label><input type="radio" name="answerThree" [value] = "questions[2].answer" ngModel> {{questions[2].answer}}</label>
+  <label><input type="radio" name="answerThree" [value] = "questions[2].fakeansweroneanswer" ngModel> {{questions[2].fakeanswerone}}</label>
+  <label><input type="radio" name="answerThree" [value] = "questions[2].fakeanswertwoanswer" ngModel> {{questions[2].fakeanswertwo}}</label>
+  <input type = "submit" value = "Submit">
+</form>
+<p *ngIf = "errors">{{errors}}</p>
